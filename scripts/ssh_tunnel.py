@@ -135,16 +135,13 @@ if cmd_opts.googleusercontent:
 if cmd_opts.multiple:
     print("all detected, remote.moe trying to connect...")
     try:
+        os.environ['GRADIO_TUNNEL'] = gradio_tunnel()
+    except:
+        pass   
+    try:
         ssh_tunnel(LOCALHOST_RUN)
     except:
         pass
-    # try:
-    #     ssh_tunnel(REMOTE_MOE)
-    # except:
-    #     pass
-    try:
-        os.environ['GRADIO_TUNNEL'] = gradio_tunnel()
-    except:
-        pass
-    strings.en["RUNNING_LOCALLY_SEPARATED"] = f"Public WebUI Colab URL: {os.getenv('REMOTE_MOE')} \nPublic WebUI Colab URL: {os.getenv('GRADIO_TUNNEL')} \nPublic WebUI Colab URL: {os.getenv('LOCALHOST_RUN')}"
-    strings.en["SHARE_LINK_DISPLAY"] = "Please do not use this link we are getting ERROR: Exception in ASGI application:  {}"
+    strings.en["SHARE_LINK_DISPLAY"] = "Đường link sever Gradio (Sever chính):  {}"
+    strings.en["RUNNING_LOCALLY_SEPARATED"] = f"Đường link sever backup 1: {os.getenv('GRADIO_TUNNEL')} \nĐường link sever backup 2: {os.getenv('LOCALHOST_RUN')}"
+    
