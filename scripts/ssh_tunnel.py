@@ -147,5 +147,5 @@ if cmd_opts.multiple:
         os.environ['GRADIO_TUNNEL'] = gradio_tunnel()
     except:
         pass
-    strings.en["RUNNING_LOCALLY_SEPARATED"] = f"Link Sever Remote: {os.getenv('REMOTE_MOE')} \nBankup Link 1: {os.getenv('GRADIO_TUNNEL')} \nBankup Link 2: {os.getenv('LOCALHOST_RUN')}"
+    strings.en["RUNNING_LOCALLY_SEPARATED"] = f"Link Sever Remote: {os.getenv('REMOTE_MOE')} \nBackup Link 1: {os.getenv('GRADIO_TUNNEL')} \nBackup Link 2: {os.getenv('LOCALHOST_RUN')}"
     strings.en["SHARE_LINK_DISPLAY"] = "Link Sever Gradio:  {}"
